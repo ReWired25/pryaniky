@@ -1,5 +1,10 @@
 import { store } from './store';
 
+export interface IauthPayload {
+  type: string;
+  payload: { username?: string; token?: string };
+}
+
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
 
@@ -26,7 +31,9 @@ export interface IauthRequest {
 }
 
 export interface IauthResponse extends ResponseStatus {
-  token: string;
+  data: {
+    token: string;
+  };
 }
 
 export interface IgetData extends ResponseStatus {

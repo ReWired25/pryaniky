@@ -1,10 +1,10 @@
 export interface IformData {
-  name: string;
+  username: string;
   password: string;
 }
 
 export enum FieldTypes {
-  login = 'login',
+  login = 'username',
   loginLabel = 'Логин',
 
   password = 'password',
@@ -18,4 +18,15 @@ export enum FieldMessages {
 
   passwordValid = 'Введите пароль!',
   passwordMin = 'Пароль слишком короткий!',
+}
+
+export enum submitValues {
+  errorCode = 2004,
+  successCode = 0,
+
+  successPath = '/table',
+
+  incorrectPair = 'Некорректная пара логин — пароль!',
+  successMessage = 'Добро пожаловать!',
+  serverError = 'Ошибка при обращении к серверу! Попробуйте позже',
 }

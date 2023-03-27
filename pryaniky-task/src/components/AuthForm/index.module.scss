@@ -3,6 +3,8 @@
 }
 
 .form {
+  position: relative;
+
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -11,4 +13,13 @@
 
   width: 350px;
   padding: 25px 30px;
+}
+
+.loaderWrapper {
+  position: absolute;
+  bottom: 15px;
+}
+
+.loader {
+  width: 80px;
 }

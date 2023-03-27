@@ -16,9 +16,9 @@ export const commonApi = createApi({
   baseQuery: fetchBaseQuery({
     baseUrl: HOST,
     prepareHeaders: (headers) => {
-      const currentToken = localStorage.getItem('pryanikiToken');
+      const currentToken = localStorage.getItem('pryanikyToken');
       if (currentToken) {
-        headers.set('authorization', `Bearer ${currentToken}`);
+        headers.set('x-auth', `${currentToken}`);
       }
       return headers;
     },
