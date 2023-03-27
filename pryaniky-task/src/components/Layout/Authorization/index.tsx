@@ -1,9 +1,11 @@
 import { AuthForm } from '../../AuthForm';
 
+import { Layout } from '..';
+
 export const Authorization = () => {
   return (
-    <div>
+    <Layout>
       <AuthForm />
-    </div>
+    </Layout>
   );
 };

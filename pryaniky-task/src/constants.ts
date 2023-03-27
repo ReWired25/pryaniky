@@ -4,3 +4,5 @@ export const DATA_PATH = '/ru/data/v3/testmethods/docs/userdocs/get/';
 export const CREATE_PATH = '/ru/data/v3/testmethods/docs/userdocs/create/';
 export const DELETE_PATH = '/ru/data/v3/testmethods/docs/userdocs/delete/';
 export const EDIT_PATH = '/ru/data/v3/testmethods/docs/userdocs/set/';
+
+export const GITHUB_LINK = 'https://github.com/ReWired25';
