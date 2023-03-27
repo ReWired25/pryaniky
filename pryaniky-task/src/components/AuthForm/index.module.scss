@@ -1,0 +1,14 @@
+.paper {
+  width: fit-content;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+
+  width: 350px;
+  padding: 25px 30px;
+}
