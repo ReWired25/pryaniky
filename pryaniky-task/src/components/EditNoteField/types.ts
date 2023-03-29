@@ -1,7 +1,7 @@
 import { UseFormRegister } from 'react-hook-form';
 import { IdataId } from '../../store/types';
 
-export interface IEditTableFieldProps {
+export interface IEditNoteFieldProps {
   className: string;
   labelText: string;
   errorStatus: boolean;

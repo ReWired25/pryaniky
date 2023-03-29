@@ -35,6 +35,7 @@ export const AuthForm = () => {
         toast.error(submitValues.incorrectPair);
       } else if (response.error_code === 0) {
         localStorage.setItem('pryanikyToken', response.data.token);
+        localStorage.setItem('pryanikyUser', username);
         dispath(setUsername({ username: username, token: response.data.token }));
         toast.success(submitValues.successMessage);
         navigate(submitValues.successPath);

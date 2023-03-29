@@ -1,15 +1,15 @@
 import { TextField } from '@mui/material';
 
-import { IEditTableFieldProps } from './types';
+import { IEditNoteFieldProps } from './types';
 
-export const EditTableField = ({
+export const EditNoteField = ({
   className,
   labelText,
   errorStatus,
   register,
   name,
   isDate,
-}: IEditTableFieldProps) => {
+}: IEditNoteFieldProps) => {
   return (
     <TextField
       className={className}

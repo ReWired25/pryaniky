@@ -1,10 +1,16 @@
-import { useSelector } from 'react-redux';
-import { Navigate } from 'react-router-dom';
+import { Navigate, useLocation } from 'react-router-dom';
 
-import { RootState } from '../../store/types';
+import { IRedirectProps, PATHS } from './types';
 
-export const Redirect = () => {
-  const login = useSelector((state: RootState) => state.auth.userToken);
+export const Redirect = ({ children }: IRedirectProps) => {
+  const { pathname } = useLocation();
+  const login = localStorage.getItem('pryanikyToken');
 
-  return login ? <Navigate to={'/table'} /> : <Navigate to={'/auth'} />;
+  if (pathname === PATHS.AUTH && login) return <Navigate to={PATHS.TABLE} />;
+  if (pathname === PATHS.TABLE && !login) return <Navigate to={PATHS.AUTH} />;
+  if (pathname === PATHS.ROOT) {
+    return login ? <Navigate to={PATHS.TABLE} /> : <Navigate to={PATHS.AUTH} />;
+  }
+
+  return children;
 };

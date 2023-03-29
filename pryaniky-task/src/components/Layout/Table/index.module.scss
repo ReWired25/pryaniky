@@ -4,17 +4,17 @@
   @include paperStandart;
 }
 
-.createTableButton {
+.createNoteButton {
   margin-bottom: 15px;
 }
 
-.tablesWrapper {
+.notesWrapper {
   display: flex;
   flex-direction: column;
   gap: 15px;
 }
 
-.tableCard {
+.noteCard {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -22,14 +22,14 @@
   padding: 15px 25px;
 }
 
-.tableField {
+.noteField {
   display: flex;
   justify-content: space-between;
 
   gap: 50px;
 }
 
-.tableButtonGroup {
+.noteButtonGroup {
   justify-content: center;
 
   box-shadow: transparent;

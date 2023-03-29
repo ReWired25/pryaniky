@@ -14,22 +14,33 @@ const {
   loader,
 } = styles;
 
-export const WarningModal = ({ handler, modalState, loadingStatus, idValue }: IWarningModal) => {
+export const WarningModal = ({
+  handler,
+  noteState,
+  logoutState,
+  loadingStatus,
+  idValue,
+}: IWarningModal) => {
   const acceptHandler = () => {
-    handler(idValue);
-    modalState(null);
+    idValue ? handler(idValue) : handler();
+    modalHandler();
+  };
+
+  const modalHandler = () => {
+    if (noteState) noteState(null);
+    if (logoutState) logoutState(false);
   };
 
   return (
     <div className={warningModalWrapper}>
-      <div className={warningModalOverlay} onClick={() => modalState(null)}></div>
+      <div className={warningModalOverlay} onClick={modalHandler}></div>
       <div className={warningModal}>
         <p className={warningModalText}>Вы уверены?</p>
         <div className={warningModalButtonsWrapper}>
           <Button variant="contained" color="secondary" onClick={acceptHandler}>
             Да
           </Button>
-          <Button color="secondary" onClick={() => modalState(null)}>
+          <Button color="secondary" onClick={modalHandler}>
             Отмена
           </Button>
         </div>

@@ -1,6 +1,9 @@
 @use '../../../styles/variables.scss' as *;
 
 .header {
+  display: flex;
+  justify-content: space-between;
+
   padding: 15px 100px;
   background-color: $background-color;
   box-shadow: $header-shadow;
@@ -19,5 +22,16 @@
 .appNameText {
   font-size: 18px;
   text-transform: uppercase;
+  font-weight: 500;
+}
+
+.profileWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.profileName {
   font-weight: 500;
 }

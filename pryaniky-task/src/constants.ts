@@ -6,8 +6,9 @@ export const DELETE_PATH = '/ru/data/v3/testmethods/docs/userdocs/delete/';
 export const EDIT_PATH = '/ru/data/v3/testmethods/docs/userdocs/set/';
 
 export const GITHUB_LINK = 'https://github.com/ReWired25';
+export const COMPANY_LINK = 'https://pryaniky.com';
 
-export const TABLE_FIELDS: { [index: string]: string } = {
+export const NOTE_FIELDS: { [index: string]: string } = {
   documentStatus: 'Статус',
   employeeNumber: 'Номер',
   documentType: 'Тип',

@@ -1,18 +1,30 @@
 import { Authorization } from '../Layout/Authorization';
-import { Tables } from '../Layout/Tables';
+import { Table } from '../Layout/Table';
 import { Redirect } from './redirect';
 
 export const ROUTES_PAGES = [
   {
     path: '/auth',
-    page: <Authorization />,
+    page: (
+      <Redirect>
+        <Authorization />
+      </Redirect>
+    ),
   },
   {
     path: '/table',
-    page: <Tables />,
+    page: (
+      <Redirect>
+        <Table />
+      </Redirect>
+    ),
   },
   {
     path: '/',
-    page: <Redirect />,
+    page: (
+      <Redirect>
+        <Authorization />
+      </Redirect>
+    ),
   },
 ];
