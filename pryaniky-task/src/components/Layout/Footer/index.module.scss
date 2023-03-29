@@ -1,0 +1,20 @@
+@use '../../../styles/variables.scss' as *;
+
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 80px;
+
+  box-shadow: $footer-shadow;
+}
+
+.githubImg {
+  width: 45px;
+  transition: 0.3s;
+}
+
+.githubLink:hover > .githubImg {
+  width: 55px;
+}

@@ -1,0 +1,36 @@
+@import '../../../styles/mixins.scss';
+
+.paper {
+  @include paperStandart;
+}
+
+.createNoteButton {
+  margin-bottom: 15px;
+}
+
+.notesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.noteCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 15px 25px;
+}
+
+.noteField {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 50px;
+}
+
+.noteButtonGroup {
+  justify-content: center;
+
+  box-shadow: transparent;
+}

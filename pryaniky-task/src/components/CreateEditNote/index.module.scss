@@ -1,0 +1,30 @@
+@import '../../styles/mixins.scss';
+
+.editFormContainer {
+  @include modalWrapper;
+}
+
+.editFormOverlay {
+  @include modalOverlay;
+}
+
+.editForm {
+  @include modal;
+
+  gap: 10px;
+
+  width: 450px;
+  padding: 25px 35px;
+}
+
+.editField:nth-child(7) {
+  margin-top: 16px;
+}
+
+.loaderWrapper {
+  @include loaderWrapperUnderButton;
+}
+
+.loader {
+  @include loaderStandart;
+}
