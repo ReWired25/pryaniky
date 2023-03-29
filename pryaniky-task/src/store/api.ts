@@ -33,7 +33,7 @@ export const commonApi = createApi({
       }),
       invalidatesTags: ['auth'],
     }),
-    getData: build.query<IgetData[], void>({
+    getData: build.query<IgetData, void>({
       query: () => ({
         url: DATA_PATH,
         method: 'GET',

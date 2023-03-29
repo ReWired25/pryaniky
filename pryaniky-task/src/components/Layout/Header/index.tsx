@@ -8,7 +8,9 @@ export const Header = () => {
     <header className={header}>
       <div className={appName}>
         <p className={appNameText}>Api app for</p>
-        <img className={appLogo} src={logo} alt="пряники" />
+        <a href="https://pryaniky.com" target={'_blank'} rel="noreferrer">
+          <img className={appLogo} src={logo} alt="пряники" />
+        </a>
       </div>
       {/* logout button */}
     </header>

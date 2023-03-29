@@ -1,0 +1,36 @@
+@import '../../../styles/mixins.scss';
+
+.paper {
+  @include paperStandart;
+}
+
+.createTableButton {
+  margin-bottom: 15px;
+}
+
+.tablesWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.tableCard {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 15px 25px;
+}
+
+.tableField {
+  display: flex;
+  justify-content: space-between;
+
+  gap: 50px;
+}
+
+.tableButtonGroup {
+  justify-content: center;
+
+  box-shadow: transparent;
+}

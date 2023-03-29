@@ -22,7 +22,11 @@ export interface Idata {
   employeeNumber: string;
   employeeSigDate: string;
   employeeSignatureName: string;
-  id?: string;
+}
+
+export interface IdataId extends Idata {
+  [index: string]: string;
+  id: string;
 }
 
 export interface IauthRequest {
@@ -37,11 +41,11 @@ export interface IauthResponse extends ResponseStatus {
 }
 
 export interface IgetData extends ResponseStatus {
-  data: Idata[];
+  data: IdataId[];
 }
 
 export interface IchangeNoteResponse extends ResponseStatus {
-  data: Idata;
+  data: IdataId;
 }
 
 export interface IeditNoteRequest {

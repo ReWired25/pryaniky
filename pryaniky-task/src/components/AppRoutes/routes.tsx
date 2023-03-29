@@ -1,5 +1,5 @@
 import { Authorization } from '../Layout/Authorization';
-import { Table } from '../Layout/Table';
+import { Tables } from '../Layout/Tables';
 import { Redirect } from './redirect';
 
 export const ROUTES_PAGES = [
@@ -9,7 +9,7 @@ export const ROUTES_PAGES = [
   },
   {
     path: '/table',
-    page: <Table />,
+    page: <Tables />,
   },
   {
     path: '/',

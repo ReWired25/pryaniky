@@ -1,0 +1,54 @@
+@use './variables.scss' as *;
+
+@mixin paperStandart {
+  width: fit-content;
+}
+
+@mixin modalWrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 50;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin modalOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  z-index: 10;
+
+  cursor: pointer;
+  background-color: $overlay-backgroud;
+}
+
+@mixin modal {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 20;
+
+  border-radius: 5px;
+  background-color: $background-color;
+}
+
+@mixin loaderWrapperUnderButton {
+  position: absolute;
+  bottom: 15px;
+}
+
+@mixin loaderStandart {
+  width: 80px;
+}

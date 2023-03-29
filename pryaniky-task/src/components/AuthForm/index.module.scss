@@ -1,5 +1,7 @@
+@import '../../styles/mixins.scss';
+
 .paper {
-  width: fit-content;
+  @include paperStandart;
 }
 
 .form {
@@ -16,10 +18,9 @@
 }
 
 .loaderWrapper {
-  position: absolute;
-  bottom: 15px;
+  @include loaderWrapperUnderButton;
 }
 
 .loader {
-  width: 80px;
+  @include loaderStandart;
 }

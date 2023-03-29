@@ -8,7 +8,7 @@ const { footer, githubLink, githubImg } = styles;
 export const Footer = () => {
   return (
     <footer className={footer}>
-      <a className={githubLink} href={GITHUB_LINK}>
+      <a target={'_blank'} className={githubLink} href={GITHUB_LINK} rel="noreferrer">
         <img className={githubImg} src={githubIcon} alt="Гитхаб" />
       </a>
     </footer>
