@@ -81,6 +81,7 @@ export const CreateEditNote = ({ noteData, editHandler, createHandler }: ICreate
               labelText={errors[note] ? (errors[note]?.message as string) : NOTE_FIELDS[note]}
               errorHandler={setError}
               clearErrorHandler={clearErrors}
+              dateValue={noteData && noteData[note]}
             />
           ) : (
             <EditNoteField
