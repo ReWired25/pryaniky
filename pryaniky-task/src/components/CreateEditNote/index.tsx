@@ -5,6 +5,7 @@ import { toast } from 'react-toastify';
 
 import { Loader } from '../Loader';
 import { EditNoteField } from '../EditNoteField';
+import { EditDateNoteField } from '../EditDateNoteField';
 import { useEditNoteMutation, useCreateNoteMutation } from '../../store/api';
 import { convertDataFields } from '../../utils/functions';
 
@@ -22,14 +23,16 @@ export const CreateEditNote = ({ noteData, editHandler, createHandler }: ICreate
   const [editNote, { isLoading }] = useEditNoteMutation();
   const [createNote, { isLoading: isLoadingCreate }] = useCreateNoteMutation();
 
-  const currentData = noteData ? { ...noteData, ...convertDataFields(noteData) } : {};
   const {
     register,
+    setError,
+    clearErrors,
+    control,
     formState: { errors, isValid },
     handleSubmit,
   } = useForm<IdataId>({
     mode: 'onBlur',
-    defaultValues: currentData,
+    defaultValues: noteData,
   });
 
   const closeEditForm = () => {
@@ -67,17 +70,31 @@ export const CreateEditNote = ({ noteData, editHandler, createHandler }: ICreate
     <div className={editFormContainer}>
       <div className={editFormOverlay} onClick={closeEditForm}></div>
       <form className={editForm} onSubmit={handleSubmit(onSubmit)}>
-        {Object.keys(NOTE_FIELDS).map((note, i) => (
-          <EditNoteField
-            key={i}
-            className={editField}
-            labelText={errors[note] ? (errors[note]?.message as string) : NOTE_FIELDS[note]}
-            errorStatus={!!errors[note]}
-            register={register}
-            name={note}
-            isDate={note.includes('Date')}
-          />
-        ))}
+        {Object.keys(NOTE_FIELDS).map((note, i) =>
+          note.includes('Date') ? (
+            <EditDateNoteField
+              key={i}
+              control={control}
+              className={editField}
+              name={note}
+              errors={errors}
+              labelText={errors[note] ? (errors[note]?.message as string) : NOTE_FIELDS[note]}
+              errorHandler={setError}
+              clearErrorHandler={clearErrors}
+              dateValue={noteData && noteData[note]}
+            />
+          ) : (
+            <EditNoteField
+              key={i}
+              className={editField}
+              labelText={errors[note] ? (errors[note]?.message as string) : NOTE_FIELDS[note]}
+              errorStatus={!!errors[note]}
+              register={register}
+              name={note}
+              isDate={note.includes('Date')}
+            />
+          )
+        )}
         <Button
           variant="contained"
           color="secondary"
